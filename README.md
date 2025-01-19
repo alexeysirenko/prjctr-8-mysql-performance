@@ -51,21 +51,12 @@
 
 ---
 
-### Insert Random 100,000 Users (Batch Size: 100, 10 Parallel)
-
-| `innodb_flush_log_at_trx_commit` | Index Type | Elapsed Time |
-| -------------------------------- | ---------- | ------------ |
-| 1 (default)                      | BTREE      | 23s          |
-| 0                                | BTREE      | 8.7s         |
-| 2                                | BTREE      | 8.8s         |
-
----
 
 ## Siege Tests
 
 ### Siege Command:
 
-- `siege -c10 -r3 -f urls.txt` (Insert Random 50 Users, Batch Size: 1)
+- `siege -c10 -r3 -f urls.txt` (Insert Random 50 Users, Batch Size: 1, 10 parallel API users)
 
 | `innodb_flush_log_at_trx_commit` | Elapsed Time | Response Time | Longest Transaction |
 | -------------------------------- | ------------ | ------------- | ------------------- |
